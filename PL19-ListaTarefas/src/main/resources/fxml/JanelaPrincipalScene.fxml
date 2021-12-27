@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane onKeyReleased="#teclaPressionadaAction" onMouseReleased="#teclaRatoLibertadaAction" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.isep.dei.pl19.ui.JanelaPrincipalUI">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu fx:id="mnuFicheiro" mnemonicParsing="false" onShowing="#mnuFicheiroShowing">
+            <items>
+              <MenuItem fx:id="mnuFicheiroGuardarTexto" mnemonicParsing="false" onAction="#mnuFicheiroGuardarTextoAction" />
+                  <MenuItem fx:id="mnuFicheiroGuardarBinario" mnemonicParsing="false" onAction="#mnuFicheiroGuardarBinarioAction" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="mnuFicheiroSair" mnemonicParsing="false" onAction="#mnuFicheiroSairAction" />
+            </items>
+          </Menu>
+          <Menu fx:id="mnuTarefa" mnemonicParsing="false" onShowing="#mnuTarefaShowing">
+            <items>
+              <MenuItem fx:id="mnuTarefaAdicionar" mnemonicParsing="false" onAction="#mnuTarefaAdicionarAction" />
+                  <Menu fx:id="mnuTarefaRemover" mnemonicParsing="false" onShowing="#mnuTarefaRemoverShowing">
+                    <items>
+                      <MenuItem fx:id="mnuTarefaRemoverSeleccionada" mnemonicParsing="false" onAction="#mnuTarefaRemoverSeleccionadaAction" />
+                        <MenuItem fx:id="mnuTarefaRemoverTodas" mnemonicParsing="false" onAction="#mnuTarefaRemoverTodasAction" />
+                    </items>
+                  </Menu>
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <ListView fx:id="lstViewTarefas" prefHeight="300.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+         </BorderPane.margin>
+      </ListView>
+   </center>
+</BorderPane>
